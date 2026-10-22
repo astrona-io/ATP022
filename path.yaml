@@ -1,0 +1,115 @@
+apiVersion: content.astrona.io/v1alpha1
+kind: TrainingPath
+metadata:
+  id: ATP022
+  slug: openbao
+  title: "OpenBao"
+  description: >-
+    The OpenBao track: one course per domain — fundamentals and the bao CLI,
+    authentication and identity, secrets engines and dynamic credentials,
+    policies, leases and audit, OpenBao Agent and application integration,
+    and high-availability operations with auto-unseal — with readings,
+    ungraded playgrounds and graded hands-on labs that run on your own
+    computer with the Astrona CLI.
+  version: "0.1.0"
+  language: "en"
+  maturity: draft
+  authors:
+    - name: "Paris Nakita Kejser"
+      email: "paris@astrona.io"
+      company: "Astrona.io"
+  tags:
+    - "OpenBao"
+    - "Secrets Management"
+    - "Security"
+    - "OpenSSF"
+  license: "Apache-2.0"
+
+spec:
+  audience: "Platform and security engineers who manage secrets for applications and infrastructure."
+  difficulty: "Intermediate"
+
+  # There is no official OpenBao certification exam. The domains and their
+  # weights below are Astrona's own.
+  examPreparation:
+    enabled: false
+
+  prerequisites:
+    - "Working knowledge of Kubernetes, Helm and kubectl."
+    - "Basic knowledge of TLS certificates and of a SQL database."
+    - "A computer that can run the Astrona CLI with Docker or Podman, for the labs."
+
+  learningOutcomes:
+    - "Run, initialize, unseal and operate OpenBao with the bao CLI."
+    - "Authenticate people and machines and model them as identities."
+    - "Issue static and dynamic secrets, certificates and encryption as a service, and manage their leases."
+    - "Write least-privilege policies and audit every request."
+    - "Deliver secrets to applications with OpenBao Agent and the Kubernetes injector."
+    - "Run OpenBao highly available with Raft and auto-unseal, and back it up and upgrade it."
+
+  stages:
+    - id: "ATP022-STG001"
+      title: "Fundamentals, Architecture & CLI Operations"
+      description: "What OpenBao is and its security model, the server configuration file and storage, and initializing, unsealing and sealing with the bao CLI."
+      weight: 10
+      maturity: draft
+      content:
+        - ref: ATS112
+          repository: "https://github.com/astrona-io/ATS112"
+          path: "."
+          version: "0.1.0"
+
+    - id: "ATP022-STG002"
+      title: "Authentication Methods & Identity Management"
+      description: "AppRole, Kubernetes, OIDC, TLS certificate and userpass authentication, identity entities, groups and aliases, and token types, TTLs and renewal."
+      weight: 20
+      maturity: draft
+      content:
+        - ref: ATS113
+          repository: "https://github.com/astrona-io/ATS113"
+          path: "."
+          version: "0.1.0"
+
+    - id: "ATP022-STG003"
+      title: "Secrets Engines & Dynamic Credential Lifecycle"
+      description: "KV version 2, a PKI hierarchy with root and intermediate CAs, dynamic PostgreSQL credentials, the Transit engine, and lease renewal and revocation."
+      weight: 25
+      maturity: draft
+      content:
+        - ref: ATS114
+          repository: "https://github.com/astrona-io/ATS114"
+          path: "."
+          version: "0.1.0"
+
+    - id: "ATP022-STG004"
+      title: "Access Control Policies, Leases & Audit Devices"
+      description: "Path-based policies with templates, capabilities, control groups, response wrapping, lease revocation trees, and file and syslog audit devices."
+      weight: 15
+      maturity: draft
+      content:
+        - ref: ATS115
+          repository: "https://github.com/astrona-io/ATS115"
+          path: "."
+          version: "0.1.0"
+
+    - id: "ATP022-STG005"
+      title: "OpenBao Agent, Proxy & Application Integration"
+      description: "OpenBao Agent auto-auth, caching and templates, OpenBao Proxy, the Kubernetes agent injector, and the HTTP API."
+      weight: 15
+      maturity: draft
+      content:
+        - ref: ATS116
+          repository: "https://github.com/astrona-io/ATS116"
+          path: "."
+          version: "0.1.0"
+
+    - id: "ATP022-STG006"
+      title: "Enterprise Operations, Auto-Unseal & HA Clusters"
+      description: "High availability with Integrated Storage (Raft), Transit and KMS auto-unseal, telemetry, snapshots, backup and upgrades."
+      weight: 15
+      maturity: draft
+      content:
+        - ref: ATS117
+          repository: "https://github.com/astrona-io/ATS117"
+          path: "."
+          version: "0.1.0"
