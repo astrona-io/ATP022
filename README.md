@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://astrona.io/courses/openbao">
+    <img src="https://astrona.io/courses/openbao/banner.svg" alt="OpenBao: course domains on Astrona" width="100%">
+  </a>
+</p>
+
 # ATP022 — OpenBao
 
 An Astrona **training path**: a course track that groups training series
